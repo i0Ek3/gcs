@@ -7,7 +7,7 @@ Simple Client-Server model, and to know how this work.
 
 ## Run
 
-You can download [release]() to run it directly, or clone this repo then build it:
+You can download [release](https://github.com/i0Ek3/gcs/releases) file to run it directly, or clone this repo then build it:
 
 ```Shell
 $ git clone git@github.com:i0Ek3/gcs.git
@@ -21,7 +21,7 @@ $ ./client
 
 ## Log
 
-2018-01-09: v1, client send data to server only.
+2018-01-09: v1.0, client send data to server only.
 
 
 
@@ -47,6 +47,7 @@ ____bin      // excutable files
 ## Note
 
 Credit for [Unknown](https://github.com/Unknwon).
+
 Reference: [https://github.com/Unknwon/the-way-to-go_ZH_CN](https://github.com/Unknwon/the-way-to-go_ZH_CN)
 
 
