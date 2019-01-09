@@ -18,10 +18,11 @@ $ ./client
 ```
 
 
-
 ## Log
 
 2018-01-09: v1.0, client send data to server only.
+
+
 
 
 
@@ -30,16 +31,16 @@ $ ./client
 ```Shell
 
 ____src      // go files
-      |____v1
-      |____v2
+      |____client.go
+      |____server.go
       ...
-      |____vx
+      
 
-____bin      // excutable files
-      |____v1
-      |____v2
+____bin      // excutable files, un-upload
+      |____client
+      |____server
       ...
-      |____vx
+
 
 ```
 
