@@ -11,7 +11,7 @@ You can download [release](https://github.com/i0Ek3/gcs/releases) file to run it
 
 ```Shell
 $ git clone git@github.com:i0Ek3/gcs.git
-$ cd gcs/src/$v  // $v is version dir
+$ cd gcs/src/
 $ go build client.go ; go build server.go
 $ ./server
 $ ./client
@@ -33,6 +33,8 @@ $ ./client
 ____src      // go files
       |____client.go
       |____server.go
+      |____dial.go
+      |____socket.go
       ...
       
 
