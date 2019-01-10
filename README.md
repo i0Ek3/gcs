@@ -21,9 +21,9 @@ $ ./client
 ## Log
 
 
-2018-01-10: v1.1, add new instructs and rewrite some code.
+2018-01-10: v0.2, add new instructs and rewrite some code.
 
-2018-01-09: v1.0, client send data to server only.
+2018-01-09: v0.1, client send data to server only.
 
 
 
@@ -41,11 +41,11 @@ ____src      // go files
       
 
 ____bin      // excutable files, un-upload
-      |____v1.0
+      |____v0.1
       |     |____client
       |     |____server
       |
-      |____v1.1
+      |____v0.2
       |     |____client
       |     |____server
       | 
