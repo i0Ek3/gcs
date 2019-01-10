@@ -20,10 +20,8 @@ $ ./client
 
 ## Log
 
-
-2018-01-10: v0.2, add new instructs and rewrite some code.
-
-2018-01-09: v0.1, client send data to server only.
+- 2019-01-10: v0.2-alpha, add new instructs and rewrite some code.
+- 2019-01-09: v0.1-alpha, client send data to server only.
 
 
 
