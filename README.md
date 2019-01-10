@@ -41,11 +41,11 @@ ____src      // go files
       
 
 ____bin      // excutable files, un-upload
-      |____v1
+      |____v1.0
       |     |____client
       |     |____server
       |
-      |____v2
+      |____v1.1
       |     |____client
       |     |____server
       | 
