@@ -11,10 +11,7 @@ import (
 func main() {
         // open connections
         conn, err := net.Dial("tcp", "localhost:50000") // client use net.Dial() to create a connection with server
-        if err != nil {
-                fmt.Println("Error dialing", err.Error())
-                return 
-        }
+        checkError(err)
 
         // read buffer from os.Stdin 
         inputReader := bufio.NewReader(os.Stdin)
@@ -30,8 +27,15 @@ func main() {
                 if trimmedInput == "q" {
                         return 
                 }
+                
                 // after slice write input to server
                 _, err = conn.Write([]byte(trimmedClient + " : " + trimmedInput))
+                checkError(err)
         }
 }
 
+func checkError(err error) {
+        if err != nil {
+                panic("Error: " + err.Error())    
+        }
+}
