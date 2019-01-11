@@ -108,19 +108,6 @@ func listUser() {
         }
 }
 
-//func handleMsg(len int, err error, msg []byte) {
-//        if len > 0 {
-//                fmt.Print("<", len, ":")
-//                for i := 0; ; i++ {
-//                        if msg[i] == 0 {
-//                                break 
-//                        }
-//                        fmt.Printf("%c", msg[i])
-//                }
-//                fmt.Print(">")
-//        }
-//}
-
 func checkError(err error, info string) {
         if err != nil {
                 panic("Error: " + info + " " + err.Error())
