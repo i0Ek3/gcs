@@ -11,7 +11,7 @@ You can download [release](https://github.com/i0Ek3/gcs/releases) file to run it
 
 ```Shell
 $ git clone git@github.com:i0Ek3/gcs.git
-$ cd gcs/src/
+$ cd gcs/
 $ go build client.go ; go build server.go
 $ ./server
 $ ./client
@@ -24,32 +24,6 @@ $ ./client
 - 2019-01-10: v0.2-alpha, add new instructs and rewrite some code.
 - 2019-01-09: v0.1-alpha, client send data to server only.
 
-
-## Structure
-
-```Shell
-
-____src      // go files
-      |____client.go
-      |____server.go
-      |____dial.go
-      |____socket.go
-      ...
-      
-
-____bin      // excutable files, un-upload
-      |____v0.1
-      |     |____client
-      |     |____server
-      |
-      |____v0.2
-      |     |____client
-      |     |____server
-      | 
-      ...
-
-
-```
 
 
 ## Note
