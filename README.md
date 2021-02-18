@@ -29,7 +29,7 @@ $ ./client 50000
 
 - [x] Expand C/S model
 - [x] More commands support
-- ...
+- [x] ...
 
 
 ## Reference
