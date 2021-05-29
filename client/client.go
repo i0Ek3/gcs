@@ -6,12 +6,15 @@ import (
         "net"
         "bufio"
         "strings"
+
+        e "err"
 )
 
 func main() {
         // open connections
-        conn, err := net.Dial("tcp", "localhost:50000") // client use net.Dial() to create a connection with server
-        checkError(err)
+        // client use net.Dial() to create a connection with server
+        conn, err := net.Dial("tcp", "localhost:50000") 
+        e.checkError(err)
 
         // read buffer from os.Stdin 
         inputReader := bufio.NewReader(os.Stdin)
@@ -30,12 +33,6 @@ func main() {
                 
                 // after slice write input to server
                 _, err = conn.Write([]byte(trimmedClient + " : " + trimmedInput))
-                checkError(err)
-        }
-}
-
-func checkError(err error) {
-        if err != nil {
-                panic("Error: " + err.Error())    
+                e.checkError(err)
         }
 }

@@ -1,3 +1,2 @@
 *.DS_Store
-src/client
-src/server
+out/*

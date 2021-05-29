@@ -8,6 +8,8 @@ import (
         "flag"
         "syscall"
         "strings"
+
+        e "err"
 )
 
 var mapUsers map[string]int
@@ -27,17 +29,19 @@ func main() {
 
         // listen connections from client
         for {
-                conn, err := listener.Accept() // waitting for requests
-                checkError(err, "Accept: ")
-                go doServerStuff(conn) // create different goroutines for every connection
+                // waitting for requests
+                conn, err := listener.Accept() 
+                e.checkError(err, "Accept: ")
+                // create different goroutines for every connection
+                go doServerStuff(conn) 
         }
 }
 
 func initServer(host, port string) *net.TCPListener {
         serverAddr, err := net.ResolveTCPAddr("tcp", host + ":" + port)
-        checkError(err, "Cannot resolving address: " + host + ":" + port +" ")
+        e.checkError(err, "Cannot resolving address: " + host + ":" + port +" ")
         listener, err := net.ListenTCP("tcp", serverAddr)
-        checkError(err, "ListenTCP: ")
+        e.checkError(err, "ListenTCP: ")
         fmt.Println("Listening to: ", listener.Addr().String())
         return listener 
 }
@@ -75,18 +79,10 @@ func doServerStuff(conn net.Conn) {
                         fmt.Println(t.Format(time.ANSIC))
                 }
                 
-                //if strings.Contains(input, ": reboot") {
-                //        // want: reboot server from client, and keep original arguments
-                //        // result: wrong pipe
-                //        initServer("127.0.0.1", "50000")
-                //}
-
-
                 if strings.Contains(input, ": help") {
                         fmt.Println("You can use these commands as follows:")
                         fmt.Println("   help           To check avaiable commands.")
                         fmt.Println("   shutdown       To close the connection with server.")
-                        //fmt.Println("   reboot         Reboot server from client.")
                         fmt.Println("   list           To check the users under the connection.")
                         fmt.Println("   time           To check the current time.")
                 }
@@ -98,18 +94,12 @@ func doServerStuff(conn net.Conn) {
 CLOSE:
         err := conn.Close()
         fmt.Println("Closed connection: ", connFrom)
-        checkError(err, "Close: ")
+        e.checkError(err, "Close: ")
 }
 
 func listUser() {
         fmt.Println("This is the client list: 1=active, 0=inactive")
         for key, value := range mapUsers {
                 fmt.Printf("User %s is %d\n", key, value)    
-        }
-}
-
-func checkError(err error, info string) {
-        if err != nil {
-                panic("Error: " + info + " " + err.Error())
         }
 }
